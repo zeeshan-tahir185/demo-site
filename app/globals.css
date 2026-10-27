@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #061423;
+  --color-navy-900: #0b1f36;
+  --color-navy-800: #12304f;
+  --color-navy-700: #1b416a;
+  --color-navy-600: #2a5788;
+  --color-gold-300: #e7cf93;
+  --color-gold-400: #d8b867;
+  --color-gold-500: #c39e45;
+  --color-gold-600: #a2802e;
+  --color-sand-50: #fbf9f4;
+  --color-sand-100: #f4efe3;
+  --color-sand-200: #e9e1cf;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  background: var(--color-sand-50);
+  color: var(--color-navy-900);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+[dir="rtl"] body,
+[dir="rtl"] .font-display {
+  font-family: var(--font-arabic), system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-slow { animation: float 8s ease-in-out infinite 1s; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-up 0.5s ease-out both; }
